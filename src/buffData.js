@@ -351,12 +351,6 @@ let buffs = [
     clase: "Hunter"
   },
   {
-    id: 50511,
-    name: "Curse of Weakness",
-    description: "Target's melee attack power is reduced by 478 and armor is reduced by 5% for 2 min. Only one Curse per Warlock can be active on any one target.",
-    clase: "Warlock"
-  },
-  {
     id: 49904,
     name: "Icy Touch",
     description: "Chills the target for 187 to 203 Frost damage and infects them with Frost Fever, a disease that deals periodic damage and reduces melee and ranged attack speed by 14% for 15 seg. Very high threat when in Frost Presence.",

@@ -1,13 +1,17 @@
-import React from 'react';
-import IMAGES from '../assets/images';
+import React, { useState } from 'react';
+import { getClases } from "../clasesData";
+import { getBuffs } from "../buffData";
 
-const compMaker = () => {
+const CompMaker = () => {
+
+  const [buffs, updateBuffs] = useState(getBuffs());
+  const [clases, updateClases] = useState(getClases());
+
   return(
-    <div>
-      <p>Work in Progress</p>
-      <img src={ IMAGES.affliction } alt="" />
-    </div>
+  <div className="App">
+    <p>Comp Maker</p>
+  </div>
   );
 };
 
-export default compMaker;
+export default CompMaker;

@@ -6,15 +6,15 @@ import {
   Outlet,
   useSearchParams,
 } from 'react-router-dom';
-import { getBuffs } from "../buffData";
+import { getClases } from "../clasesData";
 
 function QueryNavLink({ to, ...props }) {
   let location = useLocation();
   return <NavLink to={to + location.search} {...props} />;
 }
 
-export default function Buffs() {
-  let buffs = getBuffs();
+export default function Clases() {
+  let clases = getClases();
   let [searchParams, setSearchParams] = useSearchParams({ replace: true });
 
   return (
@@ -31,16 +31,16 @@ export default function Buffs() {
             }
           }}
         />
-        {buffs
-          .filter((buff) => {
+        {clases
+          .filter((clase) => {
             let filter = searchParams.get('filter');
             if (!filter) return true;
-            let name = buff.name.toLowerCase();
+            let name = clase.name.toLowerCase();
             return name.startsWith(filter.toLowerCase());
           })
-          .map((buff) => (
+          .map((clase) => (
             <QueryNavLink
-              key={buff.id}
+              key={clase.id}
               style={({ isActive }) => {
                 return {
                   display: 'block',
@@ -48,9 +48,9 @@ export default function Buffs() {
                   color: isActive ? 'red' : '',
                 };
               }}
-              to={`/buffs/${buff.id}`}
+              to={`/classes/${clase.id}`}
             >
-              {buff.name}
+              {clase.name}
             </QueryNavLink>
           ))}
       </nav>

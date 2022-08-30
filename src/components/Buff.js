@@ -1,7 +1,7 @@
 import React from "react";
 
 import { useParams } from "react-router-dom";
-import { getBuff } from '../data';
+import { getBuff } from '../buffData';
 
 export default function Buff() {
 
